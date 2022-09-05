@@ -1,0 +1,164 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  color: #493240;
+}
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center; /* y axis*/
+  align-items: center; /*x axis*/
+  background: linear-gradient(
+    135deg,
+    #a8ff78,
+    #78ffd6
+  ); /*go to https://uigradients.com/#SummerDog*/
+  padding: 10px;
+}
+
+.container {
+  max-width: 700px;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.8);
+  padding: 25px 30px;
+  border-radius: 10px;
+}
+.container .title {
+  font-size: 25px;
+  font-weight: 500;
+  color: #333;
+  text-transform: capitalize;
+  letter-spacing: 2px;
+  position: relative;
+}
+.container .title::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 3px;
+  width: 30px;
+  background: linear-gradient(135deg, #ff0099, #493240);
+}
+
+.container form .user_detail {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 20px 0 12px 0;
+}
+.container form .user_detail .input_box {
+  width: calc(100% / 2 - 20px);
+  margin-bottom: 15px;
+}
+.container form .user_detail .input_box input {
+  height: 45px;
+  width: 100%;
+  /* border-radius: 5px; */
+  outline: none;
+  border: none;
+  border-bottom: 2px solid #ff0099;
+  background: transparent;
+  font-size: 1rem;
+  padding-left: 15px;
+  transition: all 0.3s ease;
+}
+.container form .user_detail .input_box input:hover,
+.container form .user_detail .input_box input:focus,
+.container form .user_detail .input_box input:valid {
+  border-bottom: 2px solid #493240;
+}
+
+.container form .user_detail .input_box .details {
+  display: block;
+  font-weight: 500;
+  margin-bottom: 5px;
+  margin-top: 5px;
+  font-size: 12px;
+  text-transform: capitalize;
+}
+
+.container form .gender_details {
+  font-weight: 500;
+  font-size: 12px;
+  text-transform: capitalize;
+}
+
+.container form .category {
+  width: 80%;
+  display: flex;
+  justify-content: space-between;
+  margin: 14px 0;
+}
+
+.container form .category label {
+  display: flex;
+  align-items: center;
+}
+.container form .category label .dot {
+  height: 18px;
+  width: 18px;
+  border-radius: 50%;
+  margin-right: 10px;
+  background: #d9d9d9;
+  border: 5px solid transparent;
+  transition: all 0.3s ease;
+}
+
+#dot-1:checked ~ .category label .one,
+#dot-2:checked ~ .category label .two,
+#dot-3:checked ~ .category label .three {
+  border-color: #d9d9d9;
+  background: #ff0099;
+  border: 1px solid #493240;
+}
+
+form input[type="radio"] {
+  display: none;
+}
+
+form .button {
+  height: 45px;
+  margin: 45px 0;
+}
+form .button input {
+  height: 100%;
+  width: 100%;
+  outline: none;
+  background: linear-gradient(135deg, #ff0099, #493240);
+  color: #fff;
+  border: none;
+  text-transform: capitalize;
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: 2px;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+form .button input:hover {
+  background: linear-gradient(-135deg, #ff0099, #493240);
+}
+
+@media (max-width: 584px) {
+  .container {
+    max-width: 100%;
+  }
+  .container form .user_detail .input_box {
+    margin-bottom: 15px;
+    width: 100%;
+  }
+  .container form .category {
+    width: 100%;
+  }
+  .container form .user_detail {
+    max-height: 300px;
+    overflow-y: scroll;
+  }
+  .container form .user_detail::-webkit-scrollbar {
+    width: 0;
+  }
+}
